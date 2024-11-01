@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Compressor</h1>
+        <input type="file" id="upload" accept="image/*">
+        <label for="quality">Compression Quality (%):</label>
+        <input type="number" id="quality" value="50" min="1" max="100">
+        
+        <div style="margin-top: 20px;">
+            <label for="width">Width (px):</label>
+            <input type="number" id="width" placeholder="Optional">
+        </div>
+        <div style="margin-top: 10px;">
+            <label for="height">Height (px):</label>
+            <input type="number" id="height" placeholder="Optional">
+        </div>
+        <br>
+        <label for="format">Download Format:</label>
+        <select id="format">
+            <option value="jpg">JPG</option>
+            <option value="pdf">PDF</option>
+        </select>
+        <br>
+        <br>
+        <button id="compressBtn">Compress Image</button>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <img id="output" alt="Compressed Image" style="display:none;" />
+        <p id="sizeInfo"></p> <!-- To display size information -->
+    </div>
+    <script src="compressor.js"></script>
+</body>
+</html>
